@@ -7,6 +7,7 @@
 }
 
 body {
+    padding-top: 25px !important;
   font-family: Arial, Helvetica;
   background: #189ad3;
   transition: background .5s ease;
