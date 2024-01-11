@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>EXSPENSE</title>
+  <script src="../jquery/jquery-3.3.1.min.js"></script>
+  <script src="../jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../cordova.js"></script>
+	<link rel="stylesheet" href="../css/all.css"/>
+	<link rel="stylesheet" href="../css/style2.css"/>
+</head>
+
+<body>
+  <script>document.body.className += ' fade-out';</script>
+<div class="wrapper animsition" >  
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="tentang-link">
+  <a class="animsition-link " href="set1-en.html">Preferences</a>
+  <a class="animsition-link " href="set2-en.html">About</a>
+  <img class="sidenav-logo" src="../image/logo-text-low.png" alt="exspense-logo"></img>
+  </div>
+</div>  
+
+  
+<div id="main">  
+<div class="header">
+<a href="index-en.html"><i class="fas fa-angle-left header-ico"></i></a>
+<h2 class="header-title">EXSPENSE</h2>
+<a href="#" onclick="openNav()"><i class="fas fa-bars header-ico"></i></a>
+  </div>
+  
+<div class="main-cal">
+	<div class="main-cal-content">
+  <p class="main-sum-1"><span class="sum nan" id="jum-meter-tampil">0</span>m2</p>
+  <div class="line-1"> </div>
+  <p class="main-sum-2"><span class="sum-mej nan" id="jum-orang-tampil">0</span> orang</p>
+	</div>
+  </div>
+
+<div class="input">
+  <input class="input-area" type="text" id="isianHitung" placeholder="Insert the number of people ..."></input>
+  <a href="#" class=submit-btn onclick="hitungByOrang()" id="tombolHitung"><i class="fas fa-arrow-right"></i></a>
+  </div>
+
+  <div class="sum-detail">
+    <h3 class="sum-det-h">STANDING PARTY</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop1()">Standing <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-berdiri">0</span> people</p>
+    </div>
+	<div class="det-list det-list1" id="det-list1">Standing party concept where all the attendees are stand up</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop2()">Standing and Seated <i class="fas fa-angle-down"></i></p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-duduk-berdiri">0</span> people</p>
+    </div>
+	<div class="det-list det-list2" id="det-list2">Standing party concept where the attendees can be stand up or seated</div>
+    </div>
+	
+    <h3 class="sum-det-h">BANQUET STYLE</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop3()">Round Table <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-bundar">0</span> people</p>
+    </div>
+	<div class="det-list det-list3" id="det-list3">Banquet party concept that equiped with round table<br><br>TABLE SIZE :<br>76cm Diameter</div>
+	 <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop4()">Rectangle Table <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-panjang">0</span> people</p>
+    </div>
+	<div class="det-list det-list4" id="det-list4">Banquet party concept that equiped with rectangle table<br><br>TABLE SIZE :<br>76cm x 120cm</div>
+	</div>
+    
+    <h3 class="sum-det-h">AUDITORIUM STYLE</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop5()">Spacious Chairs <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-kursi-senggang">0</span> people</p>
+    </div>
+	<div class="det-list det-list5" id="det-list5">Auditorium concept with spacious rows of chairs</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop6()">Maximum Chairs <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-kursi-dempet">0</span> people</p>
+    </div>
+    <div class="det-list det-list6" id="det-list6">Auditorium concept with maximum rows of chairs</div>
+	</div>
+	
+    <h3 class="sum-det-h">CLASSROOM STYLE</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop7()">Meja 60cm <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-enampuluh">0</span> people</p>
+    </div>
+	<div class="det-list det-list7" id="det-list7">Classroom concept that equiped with 60cm width table with full size : <br><br>60cm x 120cm</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop8()">Meja 76cm <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-tujuhenam">0</span> people</p>
+    </div>
+	<div class="det-list det-list8" id="det-list8">Classroom concept that equiped with 76cm width table with full size : <br><br>76cm x 140cm</div>
+	</div>
+	
+  </div>
+  <div class="footer"></div>
+  </div>
+  </div>
+
+  <script>
+	$(function() {
+    $('body').removeClass('fade-out');
+});
+
+	function openDrop1() {
+		document.getElementById("det-list1").classList.toggle("show");
+        var d1 = document.getElementById("det-list1").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop2() {
+        document.getElementById("det-list2").classList.toggle("show");
+        var d1 = document.getElementById("det-list2").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop3() {
+        document.getElementById("det-list3").classList.toggle("show");
+        var d1 = document.getElementById("det-list3").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop4() {
+        document.getElementById("det-list4").classList.toggle("show");
+        var d1 = document.getElementById("det-list4").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop5() {
+        document.getElementById("det-list5").classList.toggle("show");
+        var d1 = document.getElementById("det-list5").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop6() {
+        document.getElementById("det-list6").classList.toggle("show");
+        var d1 = document.getElementById("det-list6").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop7() {
+        document.getElementById("det-list7").classList.toggle("show");
+        var d1 = document.getElementById("det-list7").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop8() {
+        document.getElementById("det-list8").classList.toggle("show");
+        var d1 = document.getElementById("det-list8").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+    }
+
+window.addEventListener("click", function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("det-list");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+});
+  
+  
+	function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+function hitungByOrang() {
+  var x = document.getElementById("isianHitung").value;
+  //main-sum
+  document.getElementById("jum-meter-tampil").innerHTML = parseInt(x * 0.557418);
+  document.getElementById("jum-orang-tampil").innerHTML = x; 
+  //det-sum STANDING PARTY
+  document.getElementById("det-jum-berdiri").innerHTML = parseInt(x * 0.557418);
+  document.getElementById("det-jum-duduk-berdiri").innerHTML = parseInt(x * 0.743224);
+  //det-sum PESTA MAKAN 
+  document.getElementById("det-jum-meja-bundar").innerHTML = parseInt(x * 1.11484);
+  document.getElementById("det-jum-meja-panjang").innerHTML = parseInt(x * 0.92903);
+  //det-sum AUDITORIUM 
+  document.getElementById("det-jum-kursi-senggang").innerHTML = parseInt(x * 0.743224);
+  document.getElementById("det-jum-kursi-dempet").innerHTML = parseInt(x * 0.557418);
+  //det-sum RUANG KELAS 
+  document.getElementById("det-jum-meja-enampuluh").innerHTML = parseInt(x * 1.48645);
+  document.getElementById("det-jum-meja-tujuhenam").innerHTML = parseInt(x * 1.67225);
+  if (isNaN(x)) 
+  {
+    alert("Input tidak valid");
+	document.getElementById("jum-meter-tampil").innerHTML = 0;
+	document.getElementById("jum-orang-tampil").innerHTML = 0;
+	document.getElementById("det-jum-berdiri").innerHTML = 0;
+	document.getElementById("det-jum-duduk-berdiri").innerHTML = 0;
+	document.getElementById("det-jum-meja-bundar").innerHTML = 0;
+	document.getElementById("det-jum-meja-panjang").innerHTML = 0;
+	document.getElementById("det-jum-kursi-senggang").innerHTML = 0;
+	document.getElementById("det-jum-kursi-dempet").innerHTML = 0;
+	document.getElementById("det-jum-meja-enampuluh").innerHTML = 0;
+	document.getElementById("det-jum-meja-bundar").innerHTML = 0;  
+    return false;
+}
+}
+  </script>
+  
+</body>
+</html>

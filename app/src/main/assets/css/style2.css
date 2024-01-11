@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: Arial, Helvetica;
+  background: #189ad3;
+  transition: background .5s ease;
+  opacity: 1;
+  transition: 1s opacity;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  background: white;
+}
+
+.fa-angle-left {
+  font-size: 45px;
+  color: #71c7ec;
+  transition: all 250ms ease;
+}
+
+.fa-angle-left:active {
+  transform: scale(1.4);
+}
+
+.fa-bars {
+  font-size: 30px;
+  color: #107dac;
+  transition: all 250ms ease;
+}
+
+.fa-bars:active {
+  transform: scale(1.4);
+}
+
+.header-title {
+  color: #21627c;
+}
+
+/* MAIN CAL*/
+
+.main-cal {
+  text-align: center;
+  background: white;
+  padding-top: 20px;
+}
+
+.main-cal-content {
+  animation: 1s ease-out 0s 1 slideUp;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(70%);
+	opacity: 0;
+  }
+  80% {
+	opacity: 0.5; 
+  }
+  
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.main-sum-1 {
+  padding-top: 50px;
+  line-height: 30px;
+}
+
+.sum {
+  font-size: 100px;
+}
+
+.line-1 {
+  height: 3px;
+  background: #aaaaaa;
+  margin-left:25% !important; 
+  margin-right:25% !important;
+}
+
+.main-sum-2 {
+  margin-top: 5px;
+  color: #bfbfbf;
+  padding-bottom: 50px;
+}
+
+/* INPUT */
+
+.input {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.input-area {
+  height: 65px;
+  background: #e0e0e0;
+  border: none;
+  padding: 20px;
+  font-size: 1.02em;
+  text-align: center;
+  outline: none;
+}
+
+.input-area::placeholder {
+  color: #b5b5b5;
+}
+
+.submit-btn {
+  height: 65px;
+  background: #a8cf45;
+  text-align: center;
+  line-height: 70px;
+  font-size: 40px;
+  color: white;
+  transition: all 250ms ease;
+}
+
+.submit-btn:active {
+  background: #c0e85a;
+}
+
+/* SUM-DETAIL */
+
+.sum-detail {
+  animation: 1s ease-out 0s 1 slideUpsum;
+}
+
+
+.sum-detail-header {
+	position: relative;
+	text-align: center;
+	left: 50%;
+	transform: translate(-50%,0%);
+	background: white;
+	width: 210px;
+	padding: 5px 0;
+	border-radius: 0 0 25px 25px;
+	color: #21617C;
+	letter-spacing: 1px;
+}
+
+.sum-det-h {
+  color: white;
+  letter-spacing: 2px;
+  padding: 20px 0px 10px 10px;
+}
+
+.sum-det-list {
+  display: flex;
+  justify-content: space-between;
+  line-height: 20px;
+  letter-spacing: .6px;
+  margin-bottom: ;
+}
+
+.det-list {
+	background: white;
+	min-height: 0px;
+	width: 220px;
+	margin: 5px 0;
+	border-radius: 0 25px 25px 25px;
+	padding: 10px 15px 15px 15px;
+	text-align: left;
+	font-size: 0.9em;
+	color: #21617C;
+	display: none;
+	animation: 550ms ease-out 0s 1 slideDown;
+}
+
+@keyframes slideDown {
+	0% {
+	opacity: 0;
+	}
+	
+  
+	100% {
+    opacity: 1;
+	}
+	
+}
+
+.show {
+	display:block;
+}
+
+
+.sum-det-wrapper {
+	display: flex;
+	justify-content: ;
+	flex-direction: column;
+	margin: 0 30px;
+}
+
+.list-row1:active  > .fas {
+	color: white;
+  
+}
+
+.list-row2 {
+  font-weight: 800;
+}
+
+.list-row3 {
+  color: white;
+}
+
+.fa-angle-down {
+  color: #3cbaf2;
+}
+
+/* NAV */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #107dac;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  display: block;
+  transition: 0.5s;
+  font-weight: 600;
+}
+
+.sidenav a:active {
+  color: #71c7ec;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: -10px;
+  font-size: 60px !important;
+  left: 10px;
+  margin-right: 50px;
+  transition: all 250ms ease;
+}
+
+.closebtn:active {
+  transform: scale(0.5);
+}
+
+#main {
+  transition: margin-right .5s;
+}
+
+.sidenav-logo {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translate(-50%,-50%);
+  width: 100px;
+}
+
+.tentang-link {
+  margin: 20px;
+}
+
+.footer {
+	height: 20px;
+}
+

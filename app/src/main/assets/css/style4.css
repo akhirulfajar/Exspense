@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: Arial, Helvetica;
+  background: #107dac;
+  opacity: 1;
+  transition: 1s opacity;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  background: white;
+}
+
+.fa-angle-left {
+  font-size: 45px;
+  color: #71c7ec;
+  transition: all 250ms ease;
+}
+
+.fa-angle-left:active {
+  transform: scale(1.4);
+}
+
+.fa-bars {
+  font-size: 30px;
+  color: #107dac;
+  opacity: 0;
+}
+
+
+
+.header-title {
+  color: #21627c;
+}
+
+/* CONTENT */
+
+.content {
+  padding-left: 30px;
+  padding-top: 25px;
+}
+
+.content h2 {
+  color: white;
+  margin-bottom: 5px;
+  
+}
+
+.content p {
+
+}
+
+.menu-down {
+  margin-top: 20px;
+}
+
+/* Mode malam */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #189ad3;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #a8cf45;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* SATUAN UNIT */
+
+select {
+  font-weight: 600;
+  color: #107dac;
+  font-size: 1.1em;
+  height: 30px;
+  border-radius: 50px;
+  padding-left: 10px;
+  outline: none;
+  background: white;
+  transition: background .4s ease;
+}
+
+select:active {
+  background: #189ad3;
+}
+
+option {
+  outline: 0;
+}
+
+/* DARK MODE */
+
+
+.fiturnull {
+  color: white;
+  font-size: 0.8em;
+}

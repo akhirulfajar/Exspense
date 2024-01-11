@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>EXSPENSE</title>
+  <script src="../jquery/jquery-3.3.1.min.js"></script>
+  <script src="../jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../cordova.js"></script>
+	<link rel="stylesheet" href="../css/all.css"/>
+	<link rel="stylesheet" href="../css/style4.css"/>
+</head>
+
+<body class="light-mode"> 
+<script>document.body.className += ' fade-out';</script>
+<div class="animsition" id="main">
+  
+<header class="header page-content-light" id="page-content header">
+<a href="index-en.html"><i class="fas fa-angle-left header-ico"></i></a>
+<h2 class="header-title">Preferences</h2>
+<a><i class="fas fa-bars header-ico"></i></a>
+  </header>
+  
+<div class="content">
+  <!--
+  <h2>Night Mode</h2>
+  <label class="switch" id="nightMode-container">
+  <input type="checkbox" id="night-mode">
+  <span class="slider round menu"></span>
+</label> -->
+  <h2 class="menu-down">Language</h2>
+  <select onchange="location = this.options[this.selectedIndex].value;">
+  <option value="../set1.html">Bahasa Indonesia</option>
+  <option value="big" selected>English</option>
+</select>
+
+  </div>
+  
+ 
+  </div> 
+  
+  <script>	
+	$(function() {
+    $('body').removeClass('fade-out');
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>EXSPENSE</title>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
+  <script src="jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+	<link rel="stylesheet" href="./css/all.css"/>
+	<link rel="stylesheet" href="./css/style2.css"/>
+
+  
+</head>
+
+<body onclick="closeNavMenu()">
+  <script>document.body.className += ' fade-out';</script>
+<div class="wrapper animsition" >  
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="tentang-link">
+  <a class="animsition-link " href="set1.html">Preferensi</a>
+  <a class="animsition-link " href="set2.html">Tentang</a>
+  <img class="sidenav-logo" src="image/logo-text-low.png" alt="exspense-logo"></img>
+  </div>
+</div>  
+
+  
+<div id="main">  
+<div class="header">
+<a href="index.html"><i class="fas fa-angle-left header-ico"></i></a>
+<h2 class="header-title">EXSPENSE</h2>
+<a href="#" onclick="openNav()"><i class="fas fa-bars header-ico"></i></a>
+  </div>
+  
+<div class="main-cal">
+	<div class="main-cal-content">
+  <p class="main-sum-1"><span class="sum" id="jum-meter-tampil">0</span>m2</p>
+  <div class="line-1"> </div>
+  <p class="main-sum-2"><span class="sum-mej" id="jum-orang-tampil">0</span> orang</p>
+	</div>
+  </div>
+
+<div class="input">
+  <input class="input-area" type="text" id="isianHitung" placeholder="Masukkan jumlah orang..."></input>
+  <a href="#" class=submit-btn onclick="hitungByOrang()" id="tombolHitung"><i class="fas fa-arrow-right"></i></a>
+  </div>
+
+<div class="sum-detail-header">
+  <h4>KONSEP KEGIATAN</h4>
+  </div>
+  <div class="sum-detail">
+    <h3 class="sum-det-h">PESTA BERDIRI</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop1()">Berdiri <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-berdiri">0</span> orang</p>
+    </div>
+	<div class="det-list det-list1" id="det-list1">Konsep pesta dimana semua peserta berdiri tanpa adanya meja atau inventori lain.</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop2()">Duduk dan Berdiri <i class="fas fa-angle-down"></i></p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-duduk-berdiri">0</span> orang</p>
+    </div>
+	<div class="det-list det-list2" id="det-list2">Konsep pesta dimana terdapat peserta yang duduk maupun berdiri.</div>
+    </div>
+	
+    <h3 class="sum-det-h">PESTA MAKAN</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop3()">Meja Bundar <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-bundar">0</span> orang</p>
+    </div>
+	<div class="det-list det-list3" id="det-list3">Konsep pesta dengan penggunaan Meja Bundar (jumlah menyesuaikan)<br><br>UKURAN MEJA :<br>76cm Diameter</div>
+	 <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop4()">Meja Panjang <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-panjang">0</span> orang</p>
+    </div>
+	<div class="det-list det-list4" id="det-list4">Konsep pesta dengan penggunaan Meja Panjang (jumlah menyesuaikan)<br><br>UKURAN MEJA :<br>76cm x 120cm</div>
+	</div>
+    
+    <h3 class="sum-det-h">AUDITORIUM</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop5()">Kursi Senggang <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-kursi-senggang">0</span> orang</p>
+    </div>
+	<div class="det-list det-list5" id="det-list5">Konsep penataan ruang auditorium dengan jarak antar kursi yang senggang</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop6()">Kursi Dempet <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-kursi-dempet">0</span> orang</p>
+    </div>
+    <div class="det-list det-list6" id="det-list6">Konsep penataan ruang auditorium dengan jarak antar kursi yang rapat</div>
+	</div>
+	
+    <h3 class="sum-det-h">RUANG KELAS</h3>
+	<div class="sum-det-wrapper">
+    <div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop7()">Meja 60cm <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-enampuluh">0</span> orang</p>
+    </div>
+	<div class="det-list det-list7" id="det-list7">Konsep tata ruang kelas menggunakan meja dengan ukuran : <br><br>60cm x 120cm</div>
+	<div class="sum-det-list">
+      <p class="list-row1 dropbtn" onclick="openDrop8()">Meja 76cm <i class="fas fa-angle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p class="list-row2">:</p>
+      <p class="list-row3"><span id="det-jum-meja-tujuhenam">0</span> orang</p>
+    </div>
+	<div class="det-list det-list8" id="det-list8">Konsep tata ruang kelas menggunakan meja dengan ukuran : <br><br>76cm x 140cm</div>
+	</div>
+  </div>
+  
+  <div class="footer"></div>
+  </div>
+  </div>
+
+  <script>
+	$(function() {
+    $('body').removeClass('fade-out');
+});
+	
+	function openDrop1() {
+		document.getElementById("det-list1").classList.toggle("show");
+        var d1 = document.getElementById("det-list1").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop2() {
+        document.getElementById("det-list2").classList.toggle("show");
+        var d1 = document.getElementById("det-list2").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop3() {
+        document.getElementById("det-list3").classList.toggle("show");
+        var d1 = document.getElementById("det-list3").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop4() {
+        document.getElementById("det-list4").classList.toggle("show");
+        var d1 = document.getElementById("det-list4").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop5() {
+        document.getElementById("det-list5").classList.toggle("show");
+        var d1 = document.getElementById("det-list5").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop6() {
+        document.getElementById("det-list6").classList.toggle("show");
+        var d1 = document.getElementById("det-list6").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop7() {
+        document.getElementById("det-list7").classList.toggle("show");
+        var d1 = document.getElementById("det-list7").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list8").classList.remove('show');
+    }
+	function openDrop8() {
+        document.getElementById("det-list8").classList.toggle("show");
+        var d1 = document.getElementById("det-list8").classList;
+		if(d1.contains("show"));
+    document.getElementById("det-list1").classList.remove('show');
+	document.getElementById("det-list2").classList.remove('show');
+	document.getElementById("det-list3").classList.remove('show');
+	document.getElementById("det-list4").classList.remove('show');
+	document.getElementById("det-list5").classList.remove('show');
+	document.getElementById("det-list6").classList.remove('show');
+	document.getElementById("det-list7").classList.remove('show');
+    }
+
+window.addEventListener("click", function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("det-list");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+});
+  
+
+	function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+function hitungByOrang() {
+  var x = document.getElementById("isianHitung").value;
+  //main-sum
+  document.getElementById("jum-meter-tampil").innerHTML = parseInt(x * 0.557418);
+  document.getElementById("jum-orang-tampil").innerHTML = x; 
+  //det-sum STANDING PARTY
+  document.getElementById("det-jum-berdiri").innerHTML = parseInt(x * 0.557418);
+  document.getElementById("det-jum-duduk-berdiri").innerHTML = parseInt(x * 0.743224);
+  //det-sum PESTA MAKAN 
+  document.getElementById("det-jum-meja-bundar").innerHTML = parseInt(x * 1.11484);
+  document.getElementById("det-jum-meja-panjang").innerHTML = parseInt(x * 0.92903);
+  //det-sum AUDITORIUM 
+  document.getElementById("det-jum-kursi-senggang").innerHTML = parseInt(x * 0.743224);
+  document.getElementById("det-jum-kursi-dempet").innerHTML = parseInt(x * 0.557418);
+  //det-sum RUANG KELAS 
+  document.getElementById("det-jum-meja-enampuluh").innerHTML = parseInt(x * 1.48645);
+  document.getElementById("det-jum-meja-tujuhenam").innerHTML = parseInt(x * 1.67225);
+  if (isNaN(x)) 
+  {
+    alert("Input tidak valid");
+	document.getElementById("jum-meter-tampil").innerHTML = 0;
+	document.getElementById("jum-orang-tampil").innerHTML = 0;
+	document.getElementById("det-jum-berdiri").innerHTML = 0;
+	document.getElementById("det-jum-duduk-berdiri").innerHTML = 0;
+	document.getElementById("det-jum-meja-bundar").innerHTML = 0;
+	document.getElementById("det-jum-meja-panjang").innerHTML = 0;
+	document.getElementById("det-jum-kursi-senggang").innerHTML = 0;
+	document.getElementById("det-jum-kursi-dempet").innerHTML = 0;
+	document.getElementById("det-jum-meja-enampuluh").innerHTML = 0;
+	document.getElementById("det-jum-meja-bundar").innerHTML = 0;  
+    return false;
+}
+}
+  </script>
+  
+</body>
+</html>
