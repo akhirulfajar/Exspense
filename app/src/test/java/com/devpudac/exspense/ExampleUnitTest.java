@@ -1,4 +1,4 @@
-package com.devpudac.expense;
+package com.devpudac.exspense;
 
 import org.junit.Test;
 

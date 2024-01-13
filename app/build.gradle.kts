@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.devpudac.expense"
+    namespace = "com.devpudac.exspense"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.devpudac.expense"
+        applicationId = "com.devpudac.exspense"
         minSdk = 24
         targetSdk = 34
         versionCode = 106
